@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "vercel-build": "mkdir -p .next && cp ./source.json ./.next/${MESSAGE_FILE_NAME:-not-set.json} && next build"
+    "vercel-build": "next build && mkdir -p .next && cp ./source.json ./.next/${MESSAGE_FILE_NAME:-not-set.json}"
   },
   "dependencies": {
     "next": "^11.0.0",
