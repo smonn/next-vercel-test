@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "vercel-build": "cp ./source.json ./${MESSAGE_FILE_NAME} && next build"
+    "vercel-build": "cp ./source.json ./${MESSAGE_FILE_NAME} && ls && pwd && next build"
   },
   "dependencies": {
     "next": "^11.0.0",
