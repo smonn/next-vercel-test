@@ -2,9 +2,9 @@ import path from "path";
 import fs from "fs";
 
 export default function handle(req, res) {
-  const directory = path.join(process.cwd());
+  const directory = path.join(process.cwd(), "config");
 
-  console.log(".next dir", directory);
+  console.log("directory", directory);
   console.log("files", fs.readdirSync(directory));
   console.log("");
 

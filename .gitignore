@@ -119,3 +119,7 @@ dist
 .pnp.*
 
 message.json
+
+config/*
+!config/.gitkeep
+
