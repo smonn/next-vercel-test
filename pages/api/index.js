@@ -11,7 +11,7 @@ export default function handle(req, res) {
 
   const data = JSON.parse(
     fs.readFileSync(
-      path.join(process.cwd(), process.env.MESSAGE_FILE_NAME),
+      path.join(process.cwd(), ".next", process.env.MESSAGE_FILE_NAME),
       "utf8"
     )
   );
