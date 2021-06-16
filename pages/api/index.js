@@ -2,18 +2,14 @@ import path from "path";
 import fs from "fs";
 
 export default function handle(req, res) {
-  console.log("__dirname", __dirname);
-  console.log("files", fs.readdirSync(__dirname));
-  console.log("");
-  console.log("cwd", process.cwd());
-  console.log("files", fs.readdirSync(process.cwd()));
+  const nextDir = path.join(process.cwd(), ".next");
+
+  console.log(".next dir", nextDir);
+  console.log("files", fs.readdirSync(nextDir));
   console.log("");
 
   const data = JSON.parse(
-    fs.readFileSync(
-      path.join(process.cwd(), ".next", process.env.MESSAGE_FILE_NAME),
-      "utf8"
-    )
+    fs.readFileSync(path.join(nextDir, process.env.MESSAGE_FILE_NAME), "utf8")
   );
 
   res.json({
