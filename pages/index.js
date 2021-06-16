@@ -1,18 +1,15 @@
-import path from "path";
-import fs from "fs";
+import { useEffect, useState } from "react";
 
-export default function HomePage({ message }) {
+export default function HomePage() {
+  const [message, setMessage] = useState("loading...");
+
+  useEffect(() => {
+    fetch("/api")
+      .then((res) => res.json())
+      .then((data) => {
+        setMessage(data.message);
+      });
+  }, []);
+
   return <div>{message}</div>;
-}
-
-export function getServerSideProps() {
-  const data = JSON.parse(
-    fs.readFileSync(path.resolve("./message.json"), "utf8")
-  );
-
-  return {
-    props: {
-      message: data.message,
-    },
-  };
 }
