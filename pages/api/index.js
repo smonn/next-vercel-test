@@ -10,7 +10,10 @@ export default function handle(req, res) {
   console.log("");
 
   const data = JSON.parse(
-    fs.readFileSync(path.join(__dirname, process.env.MESSAGE_FILE_NAME), "utf8")
+    fs.readFileSync(
+      path.join(process.cwd(), process.env.MESSAGE_FILE_NAME),
+      "utf8"
+    )
   );
 
   res.json({
