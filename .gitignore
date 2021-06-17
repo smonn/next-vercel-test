@@ -118,8 +118,4 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-message.json
-
-config/*
-!config/.gitkeep
-
+config/message.json
