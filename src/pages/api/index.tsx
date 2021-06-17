@@ -1,7 +1,8 @@
 import path from "path";
 import fs from "fs";
+import { NextApiRequest, NextApiResponse } from "next";
 
-export default function handle(req, res) {
+export default function handle(req: NextApiRequest, res: NextApiResponse) {
   const directory = path.join(process.cwd(), "config");
 
   console.log("directory", directory);
